@@ -8,7 +8,7 @@ from pyvirtualdisplay import Display
 
 userdata = []
 user = []
-dank = []
+arr = []
 user.append('mohnd.mo')
 userNumber = 1;
 g = open("users.txt", "a+")
@@ -73,18 +73,18 @@ while (len(user) > 0):
                 if (e.text not in user) and (e.text not in formerusers):
                     user.append(e.text)
                 else:
-                    dank.append(e.text)
+                    arr.append(e.text)
                 print(e.text)
             f.close()
         print(userNumber)
         userNumber += 1
 
 # searching the followers of people we've already seen, because chances are we haven't seen their followers
-while len(dank) > 0:
+while len(arr) > 0:
 
     notPrivate = True;
 
-    currentUser = dank.pop()
+    currentUser = arr.pop()
     url = 'https://instagram.com/' + currentUser
     driver.get(url)
 
